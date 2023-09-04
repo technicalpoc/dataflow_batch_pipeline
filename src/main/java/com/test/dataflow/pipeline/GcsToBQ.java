@@ -1,4 +1,4 @@
-package com.test.dataflow.pipeline;
+package src.main.java.com.test.dataflow.pipeline;
 
 // import the required libraries
 import org.apache.beam.sdk.Pipeline;
