@@ -12,34 +12,10 @@ import org.apache.beam.sdk.values.PCollection;
 
 public class GcsToBQ{
 
-// create a pipeline options interface
-public interface Options extends PipelineOptions {
-
-    // create a method to set the project id
-  @Description("Project ID to run the pipeline under")
-    @Default.String("my-project-id")
-    String getProject();
-    void setProject(String value);
-
-    // create a method to set csv header
-    @Description("CSV header to ignore")
-    @Default.String("id,name,age")
-    String getHeader();
-    void setHeader(String value);
-
-    // create a method to set datasource name
-    @Description("Data source name")
-    @Default.String("datasource")
-    String              getDatasource();
-    void setDatasource(String value);    
-
-    // create a method to set gcs location
-    @Description("GCS location of the file(s) to read from")
-    @Validation.Required
-    String getInput();
-    void setInput(String value);
-
-}
+// create ToupleTag object to hold the table row
+    static final TupleTag<TableRow> tableRowTag = new TupleTag<TableRow>(){
+    private static final long serialVersionUID = 1L;
+    };
 
 
 // create empty main method
@@ -54,5 +30,6 @@ public static void main(String[] args) {
 //  use pipeline object to read data from GCS location
     PCollection<String> lines = p.apply("ReadLines", TextIO.read().from(options.getInput()));
 
+// use pipeline object to transform the data into Bi
 }
 }
