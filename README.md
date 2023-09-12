@@ -1,14 +1,17 @@
 ## Github Copilot Prompts
 
-1. create a public class
-2. create empty main method
-3. create a pipeline options interface (10 attribes - )
-   - create a method to set the project id
-   - create a method to set csv header
-   - create a method to set datasource name
-   - create a method to set gcs location
-4. create a pipeline options object from the options interface
-5. use pipeline object to read data from GCS location
+-- prompt to be used inside class for variable and method declations
+// create ToupleTag object to hold the table row
+// create ToupleTag object with a name deadLetterTag of String type
+// create a getSchema method to define the schema with attributes e.g. ID,Name,LastName,Marks,Percentage for BQ table
+
+-- prompt to be used inside main()
+// create a pipeline options object from the options interface
+// create a pipeline object from the options object
+// use pipeline object to read data from GCS location
+// apply the transformation on lines object to insert data into BQ table
+// apply the transformation on tableRowTag object to insert data into BQ table
+// run the pipeline
 
 
 ## Deployment Configuration
